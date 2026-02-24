@@ -1,0 +1,26 @@
+===========================================================================
+RETO 04: ANALIZADOR DE SENTIMIENTO DE RESEÑAS (NLP)
+===========================================================================
+
+OBJETIVO:
+Clasificar reseñas de productos como "Positivas" o "Negativas" utilizando 
+una representación de frecuencia de palabras (Bag of Words).
+
+INSTRUCCIONES DE LA FUNCIÓN:
+Nombre: analizar_sentimiento_resenas(df_resenas)
+
+1. LIMPIEZA (Pandas/Python):
+   - Convierte todo el texto de la columna 'review' a minúsculas.
+   - Elimina los signos de puntuación básicos (. , ! ?) de las reseñas.
+
+2. VECTORIZACIÓN (Sklearn):
+   - Usa 'CountVectorizer' para convertir el texto en una matriz de frecuencias.
+
+3. MODELADO (Sklearn):
+   - Divide los datos: 70% entrenamiento / 30% prueba (random_state=42).
+   - Entrena un modelo de 'MultinomialNB' (Naive Bayes), ideal para texto.
+
+4. RETORNO:
+   - Una tupla con (vectorizador_entrenado, modelo_entrenado, r2_score).
+     *Nota: Aunque r2_score se usa en regresión, aquí calcula el score 
+     de precisión (accuracy) del modelo sobre el set de prueba.*

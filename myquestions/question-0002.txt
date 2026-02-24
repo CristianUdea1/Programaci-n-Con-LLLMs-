@@ -1,0 +1,24 @@
+===========================================================================
+RETO 02: DETECCIÓN DE ANOMALÍAS EN SENSORES IOT (UNSUPERVISED)
+===========================================================================
+
+OBJETIVO:
+Identificar registros inusuales en una red de sensores usando Reducción de 
+Dimensionalidad (PCA).
+
+INSTRUCCIONES DE LA FUNCIÓN:
+Nombre: detectar_anomalias_pca(df_sensores)
+
+1. NORMALIZACIÓN (Pandas/NumPy):
+   - A cada columna, réstale su media y divídela por su desviación estándar.
+
+2. REDUCCIÓN (Sklearn):
+   - Aplica PCA para reducir las dimensiones a exactamente 2 componentes.
+
+3. DETECCIÓN (Sklearn):
+   - Entrena un IsolationForest (con contamination=0.1 y random_state=7) 
+     usando los 2 componentes del PCA.
+   - Genera las etiquetas de predicción (-1 para anomalía, 1 para normal).
+
+4. RETORNO:
+   - El DataFrame original con una nueva columna llamada 'es_anomalia'.
