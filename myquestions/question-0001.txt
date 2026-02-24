@@ -1,0 +1,39 @@
+===========================================================================
+RETO 01 : PREDICTOR DE EFICIENCIA DE COMBUSTIBLE (MPG)
+===========================================================================
+
+OBJETIVO:
+Desarrollar una función en Python que procese un dataset de automóviles, 
+realice ingeniería de variables y entrene un modelo de regresión regularizada.
+
+LIBRERÍAS REQUERIDAS:
+- pandas
+- numpy
+- sklearn (Scikit-Learn)
+
+INSTRUCCIONES DE LA FUNCIÓN:
+Nombre de la función: desarrollar_predictor_mpg(df_autos)
+
+1. LIMPIEZA Y TRANSFORMACIÓN (Pandas/NumPy):
+   - La columna 'horsepower' puede contener el string '?'. 
+   - Debes convertir 'horsepower' a float. Los errores deben ser NaN.
+   - Elimina todas las filas que contengan valores nulos (NaN).
+   - Crea una nueva columna: 'peso_por_caballo' = 'weight' / 'horsepower'.
+
+2. CODIFICACIÓN (Pandas):
+   - Transforma la columna 'origin' en variables dummy (One-Hot Encoding).
+
+3. MODELADO (Scikit-Learn):
+   - Divide los datos: 75% entrenamiento / 25% prueba (random_state=42).
+   - Escala las características usando 'StandardScaler'. 
+     *Nota: Ajusta el escalador solo con los datos de entrenamiento.*
+   - Entrena un modelo de 'Ridge Regression'.
+
+4. RESULTADOS:
+   - La función debe retornar:
+     a. El escalador entrenado.
+     b. El modelo Ridge entrenado.
+     c. El coeficiente R^2 obtenido en el set de prueba.
+
+
+===========================================================================
